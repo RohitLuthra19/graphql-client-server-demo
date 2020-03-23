@@ -27,6 +27,8 @@ class AddUser extends PureComponent {
     addUser({
       variables: { id, email, username },
       refetchQueries: () => {
+        //refetchQueries are handled asynchronously,
+        // which means by default they are not necessarily completed before the mutation has completed
         console.log("refetch");
         return [
           {
@@ -34,7 +36,7 @@ class AddUser extends PureComponent {
           }
         ];
       },
-      awaitRefetchQueries: true
+      awaitRefetchQueries: true //make sure refetched queries are completed before the mutation is considered done
     });
     this.resetForm();
   };
