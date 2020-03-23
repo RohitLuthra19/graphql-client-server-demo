@@ -1,0 +1,39 @@
+query {
+  getAllUsers{
+    username,
+    id,
+    email
+  }
+}
+
+query {
+  getUser(email: "rohit.luthra19@gmail.com"){
+    username,
+    id,
+    email
+  }
+}
+
+mutation {
+  addUser(id:"124" username: "rohitluthra2019" email:"rohitkumarluthra09@gmail.com") {
+    id
+    username
+    email
+  }
+}
+
+mutation {
+  updateUser(id:"09" username: "rohitkumarluthra09" email:"rohitkumarluthra09@gmail.com") {
+    id
+    username
+    email
+  }
+}
+
+mutation {
+  deleteUser(email:"rohitkumarluthra09@gmail.com") {
+    id
+    username
+    email
+  }
+}

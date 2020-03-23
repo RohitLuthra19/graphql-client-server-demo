@@ -1,0 +1,11 @@
+.app {
+}
+
+button,
+input {
+  width: 100%;
+}
+
+button {
+  background-color: #f1f1f1;
+}

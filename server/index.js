@@ -12,7 +12,9 @@ const MONGO_URI = process.env.MONGO_URI
 mongoose
   .connect(MONGO_URI, {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false
   })
   .then(() => console.log("db connected"))
   .catch(() => console.error("db connection failed"));

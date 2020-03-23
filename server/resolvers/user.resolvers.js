@@ -1,16 +1,18 @@
+const { User } = require("../model");
+
 module.exports = {
   Query: {
-    getAllUsers: async (root, {}, { User }) => {
+    getAllUsers: async (root, {}) => {
       const users = await User.find();
       return users;
     },
-    getUser: async (root, {}, { User }) => {
+    getUser: async (root, { email }) => {
       const user = await User.findOne({ email });
       return user;
     }
   },
   Mutation: {
-    addUser: async (root, { id, username, email }, { User }) => {
+    addUser: async (root, { id, username, email }) => {
       const newUser = await new User({
         id,
         email,
@@ -18,11 +20,11 @@ module.exports = {
       }).save();
       return newUser;
     },
-    deleteUser: async (root, { email }, { User }) => {
+    deleteUser: async (root, { email }) => {
       const deletedUser = await User.findOneAndRemove({ email });
       return deletedUser;
     },
-    updateUser: async (root, { id, username, email }, { User }) => {
+    updateUser: async (root, { id, username, email }) => {
       const updatedUser = await User.findOneAndUpdate(
         { email },
         { id, username }

@@ -1,0 +1,9 @@
+.field-label {
+  font-weight: bold;
+}
+li {
+  list-style: none;
+}
+li span {
+  margin-right: 5px;
+}
