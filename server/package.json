@@ -11,7 +11,7 @@
     "dev": "concurrently --names \"server,client\" \"npm run server --silent\" \"npm run client --silent\""
   },
   "dependencies": {
-    "apollo-server": "^2.11.0",
+    "apollo-server": "^2.25.4",
     "graphql": "^14.6.0",
     "concurrently": "^3.5.1",
     "dotenv": "^5.0.1",
